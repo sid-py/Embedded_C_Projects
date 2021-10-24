@@ -9,7 +9,7 @@
 
 int main(void)
 {
-	unsigned char data = (unsigned char) (0x87 + 0xFF00);
+	unsigned char data = 0x1FFFFFFA0B0 + 0x1245;
 
 	float result = (float) 80/ 3;
 
