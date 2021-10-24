@@ -6,3 +6,15 @@
  */
 
 
+# include <stdio.h>
+
+int main(void)
+{
+	unsigned char data = 0x87 + 0xFF00;
+
+	float result = 80/ 3;
+
+	printf("Data = %u result = %f\n", data, result);
+
+	return 0;
+}
