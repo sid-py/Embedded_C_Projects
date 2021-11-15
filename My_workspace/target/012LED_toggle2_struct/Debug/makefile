@@ -34,34 +34,34 @@ $(wildcard ../makefile.init) \
 $(wildcard ../makefile.targets) \
 
 
-BUILD_ARTIFACT_NAME := 012LED_toggle
+BUILD_ARTIFACT_NAME := 012LED_toggle2_struct
 BUILD_ARTIFACT_EXTENSION := elf
 BUILD_ARTIFACT_PREFIX := 
 BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME).$(BUILD_ARTIFACT_EXTENSION)
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-012LED_toggle.elf \
+012LED_toggle2_struct.elf \
 
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
-012LED_toggle.list \
+012LED_toggle2_struct.list \
 
 OBJCOPY_BIN += \
-012LED_toggle.bin \
+012LED_toggle2_struct.bin \
 
 
 # All Target
 all: main-build
 
 # Main-build Target
-main-build: 012LED_toggle.elf secondary-outputs
+main-build: 012LED_toggle2_struct.elf secondary-outputs
 
 # Tool invocations
-012LED_toggle.elf: $(OBJS) $(USER_OBJS) C:\Users\siddh\OneDrive\Documents\GitHub\Embedded_C_Projects\My_workspace\target\012LED_toggle\STM32F411VETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "012LED_toggle.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\siddh\OneDrive\Documents\GitHub\Embedded_C_Projects\My_workspace\target\012LED_toggle\STM32F411VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="012LED_toggle.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+012LED_toggle2_struct.elf: $(OBJS) $(USER_OBJS) C:\Users\siddh\OneDrive\Documents\GitHub\Embedded_C_Projects\My_workspace\target\012LED_toggle2_struct\STM32F411VETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "012LED_toggle2_struct.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\siddh\OneDrive\Documents\GitHub\Embedded_C_Projects\My_workspace\target\012LED_toggle2_struct\STM32F411VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="012LED_toggle2_struct.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -70,13 +70,13 @@ default.size.stdout: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-012LED_toggle.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "012LED_toggle.list"
+012LED_toggle2_struct.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "012LED_toggle2_struct.list"
 	@echo 'Finished building: $@'
 	@echo ' '
 
-012LED_toggle.bin: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objcopy  -O binary $(EXECUTABLES) "012LED_toggle.bin"
+012LED_toggle2_struct.bin: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objcopy  -O binary $(EXECUTABLES) "012LED_toggle2_struct.bin"
 	@echo 'Finished building: $@'
 	@echo ' '
 
